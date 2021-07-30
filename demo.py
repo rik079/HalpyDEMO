@@ -37,10 +37,10 @@ async def on_message(message: discord.Message):
     if message.author == HalpyDemo.user or not message.content.startswith(config['Discord']['prefix']):
         return  # Ignore our own messages
     opdr = message.content[1:].split()[0]
-    fact = HalpyDemo.facthandler.get_fact(opdr)
+    fact = HalpyDemo.facthandler.get_fact(opdr, message.content.split()[1:])  # Fact, args
     # Now we check if the message is a command or a fact
     if opdr in cmds.keys():
-        return await cmds[opdr](HalpyDemo, message)
+        return await cmds[opdr](HalpyDemo, message, message.content.split()[1:])  # Bot, context, arguments
     elif fact:
         return await message.channel.send(fact)
 
