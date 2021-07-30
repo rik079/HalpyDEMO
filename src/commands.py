@@ -54,7 +54,7 @@ async def cmd_help(bot: discord.Client, ctx: discord.Message, args: List[str]):
 @Command("announce")
 async def cmd_case(bot: discord.Client, ctx: discord.Message, args: List[str]):
     try:
-        regex = re.compile(r"['\"](?P<CMDR>[\w ]*)['\"] ['\"](?P<System>[\w ]*)['\"] (?P<HullP>\d{2,3})") \
+        regex = re.compile(r"['\"](?P<CMDR>.*)['\"] ['\"](?P<System>.*)['\"] (?P<HullP>\d{2,3})") \
             .search(' '.join(args))
         platform = args[0].lower()
         hull = regex.group("HullP")
