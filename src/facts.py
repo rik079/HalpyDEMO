@@ -1,5 +1,5 @@
 """
-HalpyDEMO v0.1
+HalpyDEMO v1.0
 
 Copyright (c) 2021 The Hull Seals,
 All rights reserved.

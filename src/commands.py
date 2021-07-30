@@ -1,5 +1,5 @@
 """
-HalpyDEMO v0.1
+HalpyDEMO v1.0
 
 Copyright (c) 2021 The Hull Seals,
 All rights reserved.
@@ -41,8 +41,7 @@ async def cmd_about(bot: discord.Client, ctx: discord.Message, args: List[str]):
 async def cmd_help(bot: discord.Client, ctx: discord.Message, args: List[str]):
     embed = discord.Embed(title="Help", colour=discord.Colour.orange(),
                           description="For a list of common facts, please see "
-                                      "https://hullseals.space/knowledge/books/irc/page/"
-                                      "halpybot-command-and-fact-listing")
+                                      "https://github.com/rik079/HalpyDEMO/blob/master/fact_list.md")
     embed.add_field(name=f"{config['Discord']['prefix']}help",
                     value="Show this message", inline=False)
     embed.add_field(name=f"{config['Discord']['prefix']}about",
