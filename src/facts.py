@@ -10,6 +10,10 @@ See license.md
 """
 
 import sqlite3
+from typing import Union
+
+import discord
+
 
 class Facthandler:
 
@@ -23,9 +27,10 @@ class Facthandler:
         for entry in cur.execute("SELECT name, text FROM facts;"):
             self._cache[entry[0]] = entry[1]
 
-    def get_fact(self, name: str):
-        # TODO: add user mentioning via arguments
+    def get_fact(self, name: str, mentions: Union[str, discord.User]):
         if name in self._cache.keys():
+            if mentions:
+                return str(' '.join(mentions).strip() + ': ' + self._cache[name])
             return self._cache[name]
         else:
             return None
