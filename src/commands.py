@@ -9,5 +9,18 @@ See license.md
 
 """
 
-class Commandhandler:
-    pass
+import discord
+
+cmds = {}
+
+def Command(name: str):
+    def deco(function):
+        if name in cmds.keys():
+            raise KeyError("Command names must be unique")
+        cmds[name] = function
+        return function
+    return deco
+
+@Command("about")
+async def cmd_about(bot, ctx: discord.Message):
+    ctx.channel.send("This is a test of the about command")

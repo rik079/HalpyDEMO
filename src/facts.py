@@ -24,6 +24,7 @@ class Facthandler:
             self._cache[entry[0]] = entry[1]
 
     def get_fact(self, name: str):
+        # TODO: add user mentioning via arguments
         if name in self._cache.keys():
             return self._cache[name]
         else:
