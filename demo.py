@@ -23,6 +23,10 @@ class DemoBot(discord.Client):
     def __init__(self):
         # Load facts first
         self.facthandler = Facthandler(config['Database']['path'])
+        # Name collision check
+        for factname in self.facthandler._cache.keys():
+            if factname in cmds:
+                raise ValueError("Fact may not have the name of an existing command")
         super().__init__()
 
 
