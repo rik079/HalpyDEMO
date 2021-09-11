@@ -10,7 +10,7 @@ HalpyDEMO only supports Discord. No functionality for other chat platforms will 
 
 ## Requirements
 - Python 3.5+
-- Discord.py Python Library
+- Pycord Python Library
 
 ## Usage
 To install, download the latest [release](https://github.com/rik079/HalpyDEMO/releases) from our repository. Upload and extract the files to the directory or subdirectory you wish to install from, and create your own config.ini to fit your server, following the example config file provided.
